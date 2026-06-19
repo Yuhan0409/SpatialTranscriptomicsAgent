@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+.env
+.venv
+.ipynb_checkpoints/
+
+outputs/processed/*.h5ad
+outputs/figures/*.png
+outputs/reports/*.md
+outputs/reports/*.csv
+
+data/*.h5ad
+data/*.h5
+data/*.loom
+
+.DS_Store
