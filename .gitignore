@@ -1,16 +1,44 @@
+# Python cache
 __pycache__/
 *.pyc
-.env
-.venv
+*.pyo
+*.pyd
 .ipynb_checkpoints/
 
-outputs/processed/*.h5ad
-outputs/figures/*.png
-outputs/reports/*.md
-outputs/reports/*.csv
+# Environment files
+.env
+.venv/
+venv/
+env/
+*.egg-info/
 
+# System files
+.DS_Store
+Thumbs.db
+
+# Large data files
 data/*.h5ad
 data/*.h5
 data/*.loom
+data/*.mtx
+data/*.csv.gz
+data/*.tsv.gz
+data/GSE278603_RAW/
+*.h5ad
 
-.DS_Store
+# Output files
+outputs/
+outputs_*/
+outputs_real_small/
+outputs_streamlit/
+
+# Processed data
+*/processed/*.h5ad
+*/processed/
+
+# Logs
+*.log
+
+# IDE
+.vscode/
+.idea/
