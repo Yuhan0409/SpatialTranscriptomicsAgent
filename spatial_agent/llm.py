@@ -16,7 +16,8 @@ project_root = Path(__file__).parent.parent
 env_path = project_root / ".env"
 
 # 显式加载 .env 文件
-load_dotenv(dotenv_path=env_path)
+if os.getenv("OPENAI_API_KEY") is None:
+    load_dotenv(dotenv_path=env_path)
 
 def get_llm():
     """
@@ -37,6 +38,8 @@ def get_llm():
             api_key=api_key,
             base_url=base_url,
             temperature=0.2,
+            request_timeout=30,
+            max_retries=0,
         )
     except Exception as e:
         print(f"Warning: failed to initialize LLM: {e}")

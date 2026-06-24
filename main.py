@@ -6,7 +6,7 @@ main.py
 """
 
 import argparse
-from spatial_agent.graph import build_graph
+import os
 
 def main():
     parser = argparse.ArgumentParser(
@@ -33,8 +33,21 @@ def main():
         default="outputs",
         help="Output directory",
     )
+    
+    parser.add_argument(
+        "--no-llm",
+        action="store_true",
+        help="Disable LLM planning and explanation",
+    )
 
     args = parser.parse_args()
+    
+    if args.no_llm:
+        os.environ["OPENAI_API_KEY"] = ""
+        os.environ["OPENAI_BASE_URL"] = ""
+        os.environ["OPENAI_MODEL"] = ""
+        
+    from spatial_agent.graph import build_graph
 
     app = build_graph()
 

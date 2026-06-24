@@ -47,7 +47,7 @@ def planner_node(state: AgentState) -> AgentState:
         "preprocess",
         "cluster",
         "spatial_plot",
-        "spatial_neighborhood",
+        # "spatial_neighborhood",
         "marker_gene",
     ]
 
@@ -112,9 +112,11 @@ def executor_node(state: AgentState) -> AgentState:
             return state
 
         step = plan[idx]
+        print(f"[Agent] Running step: {step}", flush=True)
         output_dir = state["output_dir"]
         current_data_path = state["current_data_path"]
 
+        print(f"[Agent] Finished step: {step}", flush=True)
         result: Dict[str, Any]
 
         if step == "load_h5ad":
