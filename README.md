@@ -4,7 +4,6 @@
 
 ## 1. Project Structure
 
-```text
 spatial_agent_project/
 ├── main.py
 ├── app.py
