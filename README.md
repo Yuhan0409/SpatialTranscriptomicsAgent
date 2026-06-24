@@ -3,7 +3,8 @@
 基于 LangGraph 构建的空间转录组数据分析智能体。用户可以通过自然语言描述分析需求，Agent 自动规划并执行 `.h5ad` 数据读取、质量控制、预处理、降维聚类、空间可视化、Marker Gene 分析和 Markdown 报告生成。
 
 ## 1. Project Structure
-'''
+
+'''text
 spatial_agent_project/
 ├── main.py
 ├── app.py
